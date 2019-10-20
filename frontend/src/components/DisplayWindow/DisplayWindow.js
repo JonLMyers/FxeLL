@@ -3,14 +3,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-const drawerWidth = 240;
+const drawerWidth = '10vw';
 
 const useStyles = makeStyles(theme => ({
     DisplayWindow: {
-      maxWidth: '100%',
+      maxWidth: '90vw',
       marginLeft: drawerWidth,
       backgroundColor: '#263238',
-      height: '85vh'
+      height: '90vh',
     },
   }));
 

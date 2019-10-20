@@ -14,16 +14,13 @@ import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
-const drawerWidth = 240;
+const drawerWidth = '10vw';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
-    flexGrow: 2,
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -46,8 +43,6 @@ export default function TargetBar() {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar}>
-        </div>
         <Divider />
         <List>
           {['Team 1', 'Team 2', 'Team 3', 'Team 4'].map((text, index) => (

@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const drawerWidth = 240;
+const drawerWidth = '10vw';
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -26,11 +26,13 @@ const useStyles = makeStyles(theme => ({
     display: 'none',
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
+    width: `90vw`,
+    maxWidth: `90vw`,
+    maxHeight: `8vh`
   },
   title: {
-    marginLeft: '65%',
+    marginLeft: '60vw',
   },
   toolbar: theme.mixins.toolbar,
 }));
@@ -46,9 +48,7 @@ export default function ToolBar() {
         <Button className={classes.button}>Command History</Button>
         <Button className={classes.button}>Statistics</Button>
         <Button className={classes.button}>Themes</Button>
-        <Typography variant="h6" className={classes.title}>
-          FxeLL
-        </Typography>
+
       </Toolbar>
     </AppBar>
 
