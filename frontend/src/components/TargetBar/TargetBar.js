@@ -1,26 +1,72 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from "react";
+import ToolBar from '../ToolBar/ToolBar'
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import Typography from '@material-ui/core/Typography'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
-function TargetBar() {
+const drawerWidth = 240;
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexGrow: 2,
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+
+}));
+
+export default function TargetBar() {
+  const classes = useStyles();
+
   return (
-    <nav>
-        <ul class="right hide-on-med-and-down">
-            <li><Link to="/">*Nix Targets</Link></li>
-            <li><Link to="/">Windows Targets</Link></li>
-        </ul>
-        <ul id="slide-out" class="side-nav fixed">
-            <li><Link to="/">*Nix Target</Link></li>
-            <li><Link to="/">Windows Targets</Link></li>
-        </ul>
-        <ul id="Teams" class="dropdown-content">
-            <li><a href="/">Team 1</a></li>
-            <li><a href="/">Team 2</a></li>
-            <li class="divider"></li>
-            <li><a href="/">CustomName</a></li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    </nav>
+    <div className={classes.root}>
+      <CssBaseline />
+      <ToolBar/>
+      <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+      >
+        <div className={classes.toolbar}>
+        </div>
+        <Divider />
+        <List>
+          {['Team 1', 'Team 2', 'Team 3', 'Team 4'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['Windows Targets', 'Nix Targets'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </div>
   );
 }
-
-export default TargetBar;

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import ToolBar from '../ToolBar/ToolBar'
 import TargetBar from '../TargetBar/TargetBar';
+import Prompt from '../Prompt/Prompt';
+import { createMuiTheme } from '@material-ui/core/styles';
+import green from '@material-ui/core/colors/green';
+import DisplayWindow from '../DisplayWindow/DisplayWindow';
+
 
 class App extends Component {
   render() {
     return (
       <div>
-        <ToolBar/>
-        <TargetBar/>
-        <p>Work in progress.</p>
+        <TargetBar />
+        <DisplayWindow />
+        <Prompt />
       </div>
     );
   }
