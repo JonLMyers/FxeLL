@@ -40,7 +40,7 @@ export default function Prompt() {
         <TextField
           className={classes.ShellPrompt}
           id="filled-full-width"
-          label="root@127.0.0.1"
+          label="root@Team1Win"
           fullWidth
           margin="normal"
           variant="filled"

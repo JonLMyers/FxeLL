@@ -10,6 +10,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import FlareIcon from '@material-ui/icons/Flare';
+import ExposureIcon from '@material-ui/icons/Exposure';
+import LaptopMacIcon from '@material-ui/icons/LaptopMac';
+import LaptopWindowsIcon from '@material-ui/icons/LaptopWindows';
+import RouterIcon from '@material-ui/icons/Router';
+import DvrIcon from '@material-ui/icons/Dvr';
 import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -43,23 +49,38 @@ export default function TargetBar() {
         }}
         anchor="left"
       >
+        <ListItem button>
+          <ListItemIcon><FlareIcon /></ListItemIcon>
+          <ListItemText primary={'Team1Win'} />
+        </ListItem>
+        <Divider />
+        <ListItem button>
+          <ListItemIcon><ExposureIcon /></ListItemIcon>
+          <ListItemText primary={'Add/Remove Targets'} />
+        </ListItem>
         <Divider />
         <List>
-          {['Team 1', 'Team 2', 'Team 3', 'Team 4'].map((text, index) => (
+          {['Team1Win', 'Team2Win', 'Team3Win', 'Team4Win'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon><LaptopMacIcon /></ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {['Windows Targets', 'Nix Targets'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <ListItemIcon><RouterIcon /></ListItemIcon>
+            <ListItemText primary={'Net Targets'} />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><LaptopWindowsIcon /></ListItemIcon>
+            <ListItemText primary={'Win Targets'} />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon><DvrIcon /></ListItemIcon>
+            <ListItemText primary={'Nix Targets'} />
+          </ListItem>
         </List>
       </Drawer>
     </div>
