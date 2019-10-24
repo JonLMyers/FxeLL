@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const drawerWidth = '10vw';
+const drawerWidth = '15vw';
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -27,9 +27,10 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     marginLeft: drawerWidth,
-    width: `90vw`,
-    maxWidth: `90vw`,
-    maxHeight: `8vh`
+    width: `85vw`,
+    maxWidth: `85vw`,
+    maxHeight: `8vh`,
+    backgroundColor: theme.palette.secondary.dark,
   },
   title: {
     marginLeft: '60vw',

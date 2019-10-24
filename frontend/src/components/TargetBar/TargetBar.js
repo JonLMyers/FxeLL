@@ -20,18 +20,18 @@ import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
-const drawerWidth = '10vw';
+const drawerWidth = '15vw';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-  },
   drawer: {
     width: drawerWidth,
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: theme.palette.primary.dark,
+    color: "white"
   },
-
+  
 }));
 
 export default function TargetBar() {
@@ -50,19 +50,19 @@ export default function TargetBar() {
         anchor="left"
       >
         <ListItem button>
-          <ListItemIcon><FlareIcon /></ListItemIcon>
+          <ListItemIcon ><FlareIcon color="primary" colorprimary="white"/></ListItemIcon>
           <ListItemText primary={'Team1Win'} />
         </ListItem>
         <Divider />
         <ListItem button>
-          <ListItemIcon><ExposureIcon /></ListItemIcon>
+          <ListItemIcon><ExposureIcon color="primary" colorprimary="white"/></ListItemIcon>
           <ListItemText primary={'Add/Remove Targets'} />
         </ListItem>
         <Divider />
         <List>
           {['Team1Win', 'Team2Win', 'Team3Win', 'Team4Win'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon><LaptopMacIcon /></ListItemIcon>
+              <ListItemIcon><LaptopMacIcon color="primary" colorprimary="white"/></ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -70,15 +70,15 @@ export default function TargetBar() {
         <Divider />
         <List>
           <ListItem button>
-            <ListItemIcon><RouterIcon /></ListItemIcon>
+            <ListItemIcon><RouterIcon color="primary" colorprimary="white"/></ListItemIcon>
             <ListItemText primary={'Net Targets'} />
           </ListItem>
           <ListItem button>
-            <ListItemIcon><LaptopWindowsIcon /></ListItemIcon>
+            <ListItemIcon><LaptopWindowsIcon color="primary" colorprimary="white"/></ListItemIcon>
             <ListItemText primary={'Win Targets'} />
           </ListItem>
           <ListItem button>
-            <ListItemIcon><DvrIcon /></ListItemIcon>
+            <ListItemIcon><DvrIcon color="primary" colorprimary="white"/></ListItemIcon>
             <ListItemText primary={'Nix Targets'} />
           </ListItem>
         </List>

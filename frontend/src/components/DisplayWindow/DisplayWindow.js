@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     DisplayWindow: {
       maxWidth: '90vw',
       marginLeft: drawerWidth,
-      backgroundColor: '#263238',
+      backgroundColor: theme.palette.secondary.main,
       height: '90vh',
     },
   }));

@@ -8,25 +8,30 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { withTheme } from '@material-ui/styles';
-import { width } from '@material-ui/system';
+import { width, typography } from '@material-ui/system';
 const drawerWidth = '10vw';
 
 const useStyles = makeStyles(theme => ({
     Prompt: {
       marginLeft: drawerWidth,
-      backgroundColor: '#37474f',
       height: '10vh',
-      maxWidth: '90vw',
+      maxWidth: '85vw',
     },
     ShellPrompt: {
-      marginLeft: `10vw`,
+      marginLeft: `15vw`,
       height: `5vh`,
-      width: `90vw`
+      width: `85vw`,
+      backgroundColor: theme.palette.primary.dark,
+      color: theme.palette.primary.contrastText
     },
     appBar: {
       top: 'auto',
       bottom: 0,
+      backgroundColor: theme.palette.secondary.dark
     },
+    color:{
+      color: theme.palette.primary.contrastText
+    }
   }));
 
 export default function Prompt() {
@@ -39,16 +44,17 @@ export default function Prompt() {
         <Toolbar>
         <TextField
           className={classes.ShellPrompt}
-          id="filled-full-width"
+          id="prompt"
           label="root@Team1Win"
           fullWidth
-          margin="normal"
-          variant="filled"
+          margin="dense"
+          variant="standard"
+          disableunderline="True"
           InputLabelProps={{
             shrink: true,
           }}
           InputProps={{
-            startAdornment: <InputAdornment position="start">FxeLL$ </InputAdornment>,
+            startAdornment: <InputAdornment position="start">FxeLL$</InputAdornment>,
           }}
         />
         </Toolbar>
